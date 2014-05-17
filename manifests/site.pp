@@ -6,8 +6,8 @@ class base_cls {
 }
 # tell puppet on which client to run the class
 node web {
-  include base_cls,ntp,nginx
+  include base_cls,ntp,nginx,ssh,sudo,users
 }
 node db {
-  include base_cls,ntp,mysql
+  include base_cls,ntp,mysql,ssh,sudo,users
 }

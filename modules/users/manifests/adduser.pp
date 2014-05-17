@@ -1,4 +1,4 @@
-class anjuke::adduser {
+class adduser {
     define add_user ($username='', $useruid='', $userhome='', $usershell='/bin/bash', $groups)
     {
         user

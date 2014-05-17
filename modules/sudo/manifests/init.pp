@@ -1,4 +1,4 @@
-class anjuke::sudo
+class sudo
 {
 	package
 	{ sudo:
@@ -11,7 +11,7 @@ class anjuke::sudo
 		mode	=> 440,
 		owner	=> root,
 		group	=> root,
-		content => template("sudo/rhel_sudoer.erb"),
+		content => template("sudo/centos_sudoer.erb"),
 		require => package["sudo"];
 	}
 }

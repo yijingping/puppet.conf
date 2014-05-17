@@ -1,4 +1,4 @@
-class anjuke::ssh
+class ssh
 {
 	$port = '22'
 	$usedns = 'no'
