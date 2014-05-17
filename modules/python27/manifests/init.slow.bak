@@ -1,0 +1,33 @@
+class python27 
+{
+    # install python27
+    package
+    { yum:
+        ensure => installed;
+    }
+    file
+    { "scl_python27.repo":
+        name => '/etc/yum.repos.d/scl_python27.repo',
+        ensure => present,
+        owner => root,
+        group => root,
+        mode  => 600,
+        require => Package["yum"],
+    }
+    yumrepo
+    { "scl_python27":
+      descr   => 'Python 2.7 Dynamic Software Collection',
+      baseurl => 'http://people.redhat.com/bkabrda/python27-rhel-6/',
+      enabled => 1,
+      gpgcheck => 0,
+      require => File['scl_python27.repo'];
+    
+    }
+
+    package
+    { python27:
+        ensure => installed,
+        require => Yumrepo["scl_python27"],
+    }
+
+}
