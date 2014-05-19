@@ -54,17 +54,17 @@
     ....................................................
     ...............................done.
 
-7. some importport pkgs
+7. some base pkgs
 
-    #for mysql
+    #mysql
     $ sudo yum install mysql-devel
     $ pip install MySQL-python
 
-    #for lxml
+    #lxml
     $ sudo yum install libxml2 libxml2-devel libxstl libxslt-devel python-lxml
     $ pip install lxml
 
-    #for PIL
+    #PIL
     $ wget http://effbot.org/downloads/Imaging-1.1.7.tar.gz
     $ tar xvzf Imaging-1.1.7.tar.gz
     $ cd Imaging-1.1.7

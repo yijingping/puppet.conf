@@ -1,0 +1,20 @@
+How to add a remote user?
+
+IN order to connect remotely you have to have MySQL bind port: 3306 to your machines IP in my.cnf. Then you have to have created the user in both localhost and '%' wildcard and grant permissions on all DB's as such . See below:
+
+my.cnf
+
+    #Replace xxx with your IP Address, sometimes it has no need to do this
+    bind-address        = xxx.xxx.xxx.xxx
+
+then
+
+    CREATE USER 'myuser'@'localhost' IDENTIFIED BY 'mypass';
+    CREATE USER 'myuser'@'%' IDENTIFIED BY 'mypass';
+
+Then
+
+    GRANT ALL ON *.* TO 'myuser'@'localhost';
+    GRANT ALL ON *.* TO 'myuser'@'%';
+
+Depending on your OS you may have to open port 3306 to allow remote connections.
